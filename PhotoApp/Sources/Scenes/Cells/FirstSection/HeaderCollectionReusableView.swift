@@ -9,12 +9,13 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     
-    static let identifier = "headerView"
+  static let identifier = "headerView"
     
    private lazy var titlelLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -23,15 +24,9 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         label.attributedText = NSAttributedString(string: "Все", attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.textColor = .systemBlue
         label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-//    private lazy var separatorView: UIView = {
-//        let separator = UIView()
-//        separator.layer.borderWidth = 0.5
-//        separator.layer.borderColor = UIColor.gray.cgColor
-//        return separator
-//    }()
     
     var title: String? {
         didSet {
@@ -60,21 +55,13 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     }
     
     private func setupHierarchy() {
-        
-        [titlelLabel, lookAllLabel].forEach {
-            self.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        self.addSubview(titlelLabel)
+        self.addSubview(lookAllLabel)
     }
     
     private func setupLayout() {
         
         NSLayoutConstraint.activate([
-//            separatorView.topAnchor.constraint(equalTo: self.topAnchor, constant: 2),
-//            separatorView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 7),
-//            separatorView.heightAnchor.constraint(equalToConstant: 1),
-//            separatorView.widthAnchor.constraint(equalToConstant: 1500),
-            
             titlelLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             titlelLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 7),
             
