@@ -16,6 +16,8 @@
 		503D428F2772134F001A64F9 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D428E2772134F001A64F9 /* AlbumCollectionViewCell.swift */; };
 		503D429127721371001A64F9 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D429027721371001A64F9 /* HeaderCollectionReusableView.swift */; };
 		503D42932772138A001A64F9 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D42922772138A001A64F9 /* PhotoModel.swift */; };
+		50520B60278D8B4600FADA27 /* SharedAlbumsVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50520B5F278D8B4600FADA27 /* SharedAlbumsVIewCell.swift */; };
+		50520B632796C6F000FADA27 /* TypesOfMediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50520B622796C6F000FADA27 /* TypesOfMediaViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		503D428E2772134F001A64F9 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		503D429027721371001A64F9 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		503D42922772138A001A64F9 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		50520B5F278D8B4600FADA27 /* SharedAlbumsVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAlbumsVIewCell.swift; sourceTree = "<group>"; };
+		50520B622796C6F000FADA27 /* TypesOfMediaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfMediaViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +110,10 @@
 		503D428727720D50001A64F9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				50F801D9277869BD00BF6E82 /* Tab Bar */,
 				503D428D27721336001A64F9 /* Cells */,
 				503D428827720D69001A64F9 /* Models */,
 				503D4273277204FC001A64F9 /* AlbumViewController.swift */,
-				503D428B27720F17001A64F9 /* TabBarController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -134,10 +138,44 @@
 		503D428D27721336001A64F9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				503D428E2772134F001A64F9 /* AlbumCollectionViewCell.swift */,
-				503D429027721371001A64F9 /* HeaderCollectionReusableView.swift */,
+				50520B5D278D8B0F00FADA27 /* FirstSection */,
+				50520B5E278D8B2500FADA27 /* SecondSection */,
+				50520B612796C69100FADA27 /* ThirdSection */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		50520B5D278D8B0F00FADA27 /* FirstSection */ = {
+			isa = PBXGroup;
+			children = (
+				503D429027721371001A64F9 /* HeaderCollectionReusableView.swift */,
+				503D428E2772134F001A64F9 /* AlbumCollectionViewCell.swift */,
+			);
+			path = FirstSection;
+			sourceTree = "<group>";
+		};
+		50520B5E278D8B2500FADA27 /* SecondSection */ = {
+			isa = PBXGroup;
+			children = (
+				50520B5F278D8B4600FADA27 /* SharedAlbumsVIewCell.swift */,
+			);
+			path = SecondSection;
+			sourceTree = "<group>";
+		};
+		50520B612796C69100FADA27 /* ThirdSection */ = {
+			isa = PBXGroup;
+			children = (
+				50520B622796C6F000FADA27 /* TypesOfMediaViewCell.swift */,
+			);
+			path = ThirdSection;
+			sourceTree = "<group>";
+		};
+		50F801D9277869BD00BF6E82 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				503D428B27720F17001A64F9 /* TabBarController.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +251,8 @@
 				503D4274277204FC001A64F9 /* AlbumViewController.swift in Sources */,
 				503D428C27720F17001A64F9 /* TabBarController.swift in Sources */,
 				503D4270277204FC001A64F9 /* AppDelegate.swift in Sources */,
+				50520B60278D8B4600FADA27 /* SharedAlbumsVIewCell.swift in Sources */,
+				50520B632796C6F000FADA27 /* TypesOfMediaViewCell.swift in Sources */,
 				503D4272277204FC001A64F9 /* SceneDelegate.swift in Sources */,
 				503D42932772138A001A64F9 /* PhotoModel.swift in Sources */,
 				503D429127721371001A64F9 /* HeaderCollectionReusableView.swift in Sources */,

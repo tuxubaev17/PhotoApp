@@ -7,10 +7,21 @@
 
 import UIKit
 
+enum PhotoType {
+    case albums
+    case sharedAlbums
+    case typesOfMedia
+}
+
+struct Section {
+    let options: [PhotoOption]
+}
+
 struct PhotoOption {
     let image: UIImage?
     let title: String
     let numberOfPhoto: String
+    let type: PhotoType
 }
 
 struct HeaderOption {
@@ -18,15 +29,38 @@ struct HeaderOption {
 }
 
 extension PhotoOption {
-    static func getPhotoCell() -> [PhotoOption] {
+    static func getPhotoCell() -> [Section] {
         return [
-            PhotoOption(image: UIImage(named: "car1"), title: "Недавние", numberOfPhoto: "36"),
-            PhotoOption(image: UIImage(named: "car2"), title: "WhatsApp", numberOfPhoto: "17"),
-            PhotoOption(image: UIImage(named: "car3"), title: "Instagramm", numberOfPhoto: "1"),
-            PhotoOption(image: UIImage(named: "car4"), title: "Избранное", numberOfPhoto: "0"),
-            PhotoOption(image: UIImage(named: "car5"), title: "Фото на паспорт", numberOfPhoto: "1"),
-            PhotoOption(image: UIImage(named: "car6"), title: "Машины", numberOfPhoto: "2"),
-            PhotoOption(image: UIImage(named: "car7"), title: "Машины 2", numberOfPhoto: "1")
+            Section(options: [
+                PhotoOption(image: UIImage(named: "car1"), title: "Недавние", numberOfPhoto: "36", type: .albums),
+                PhotoOption(image: UIImage(named: "car2"), title: "WhatsApp", numberOfPhoto: "17", type: .albums),
+                PhotoOption(image: UIImage(named: "car3"), title: "Instagramm", numberOfPhoto: "1", type: .albums),
+                PhotoOption(image: UIImage(named: "car4"), title: "Избранное", numberOfPhoto: "0", type: .albums),
+                PhotoOption(image: UIImage(named: "car5"), title: "Недавние", numberOfPhoto: "36", type: .albums),
+                PhotoOption(image: UIImage(named: "car6"), title: "WhatsApp", numberOfPhoto: "17", type: .albums),
+                PhotoOption(image: UIImage(named: "car7"), title: "Instagramm", numberOfPhoto: "1", type: .albums),
+                PhotoOption(image: UIImage(named: "car8"), title: "Избранное", numberOfPhoto: "0", type: .albums),
+            ]),
+            Section(options: [
+                PhotoOption(image: UIImage(named: "car9"), title: "Фото на паспорт", numberOfPhoto: "1", type: .sharedAlbums),
+                PhotoOption(image: UIImage(named: "car10"), title: "Машины", numberOfPhoto: "2", type: .sharedAlbums),
+                PhotoOption(image: UIImage(named: "car11"), title: "Машины 2", numberOfPhoto: "1", type: .sharedAlbums),
+                PhotoOption(image: UIImage(named: "car12"), title: "Фото на паспорт", numberOfPhoto: "1", type: .sharedAlbums),
+                PhotoOption(image: UIImage(named: "car13"), title: "Машины", numberOfPhoto: "2", type: .sharedAlbums),
+                PhotoOption(image: UIImage(named: "car14"), title: "Машины 2", numberOfPhoto: "1", type: .sharedAlbums)
+            ]),
+            Section(options: [
+                PhotoOption(image: UIImage(systemName: "video"), title: "Видео", numberOfPhoto: "1", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "person.crop.square"), title: "Селфи", numberOfPhoto: "2", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "livephoto"), title: "Фото Live Photos", numberOfPhoto: "1", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "camera.viewfinder"), title: "Снимки экрана", numberOfPhoto: "24", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "rhombus"), title: "Анимированные", numberOfPhoto: "0", type: .typesOfMedia)
+            ]),
+            Section(options: [
+                PhotoOption(image: UIImage(systemName: "square.and.arrow.down"), title: "Импортированные", numberOfPhoto: "1", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "eye.slash"), title: "Скрытые", numberOfPhoto: "2", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "trash"), title: "Недавно удаленные", numberOfPhoto: "22", type: .typesOfMedia)
+            ])
         ]
     }
 }
@@ -34,7 +68,7 @@ extension PhotoOption {
 extension HeaderOption {
     static func getHeaderCell() -> [HeaderOption] {
         return [HeaderOption(headerTitle: "Мои альбомы"),
-                HeaderOption(headerTitle: "Все фото"),
+                HeaderOption(headerTitle: "Общие альбомы"),
                 HeaderOption(headerTitle: "Типы медиафайлов"),
                 HeaderOption(headerTitle: "Другое")
         ]

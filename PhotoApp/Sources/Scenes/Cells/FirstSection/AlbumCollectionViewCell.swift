@@ -11,7 +11,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
    
     static let identifier = "AlbumCollectionViewCell"
     
-    private let imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -19,13 +19,13 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         return imageView
        }()
 
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let mainLabel = UILabel()
         mainLabel.textColor = .gray
         return mainLabel
        }()
 
-    private lazy var numOfPhoto: UILabel = {
+    lazy var numOfPhoto: UILabel = {
         let descriptionLabel = UILabel()
         descriptionLabel.textColor = .darkGray
         return descriptionLabel

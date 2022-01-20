@@ -38,9 +38,9 @@ class TabBarController: UITabBarController {
             generateNavigationController(rootViewController: forYouViewController, title: "For you", image: forYouImage!),
             generateNavigationController(rootViewController: albumsViewController, title: "Albums", image: albumsImage!),
             generateNavigationController(rootViewController: searchViewController, title: "Search", image: searchImage!)
-
-
-        ]
+            ]
+        
+        selectedIndex = 2
         }
 
     private func generateNavigationController(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
