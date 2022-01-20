@@ -53,7 +53,14 @@ extension PhotoOption {
                 PhotoOption(image: UIImage(systemName: "video"), title: "Видео", numberOfPhoto: "1", type: .typesOfMedia),
                 PhotoOption(image: UIImage(systemName: "person.crop.square"), title: "Селфи", numberOfPhoto: "2", type: .typesOfMedia),
                 PhotoOption(image: UIImage(systemName: "livephoto"), title: "Фото Live Photos", numberOfPhoto: "1", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "camera.viewfinder"), title: "Снимки экрана", numberOfPhoto: "24", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "rhombus"), title: "Анимированные", numberOfPhoto: "0", type: .typesOfMedia)
             ]),
+            Section(options: [
+                PhotoOption(image: UIImage(systemName: "square.and.arrow.down"), title: "Импортированные", numberOfPhoto: "1", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "eye.slash"), title: "Скрытые", numberOfPhoto: "2", type: .typesOfMedia),
+                PhotoOption(image: UIImage(systemName: "trash"), title: "Недавно удаленные", numberOfPhoto: "22", type: .typesOfMedia)
+            ])
         ]
     }
 }
@@ -63,7 +70,7 @@ extension HeaderOption {
         return [HeaderOption(headerTitle: "Мои альбомы"),
                 HeaderOption(headerTitle: "Общие альбомы"),
                 HeaderOption(headerTitle: "Типы медиафайлов"),
-//                HeaderOption(headerTitle: "Другое")
+                HeaderOption(headerTitle: "Другое")
         ]
     }
 }

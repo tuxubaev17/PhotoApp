@@ -149,16 +149,17 @@ class AlbumViewController: UIViewController {
     private func typesOfMedia() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .absolute(60))
+                                              heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 0, bottom: 3, trailing: 0)
-        
+
+        item.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 8, bottom: 0, trailing: 8)
+
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(240))
+                                                     heightDimension: .estimated(44))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        
+
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 2, bottom: 15, trailing: 2)
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "header", alignment: .top)
@@ -191,7 +192,7 @@ extension AlbumViewController: UICollectionViewDataSource {
             return cell
         case .typesOfMedia:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypesOfMediaViewCell.identifier, for: indexPath) as? TypesOfMediaViewCell else { return UICollectionViewCell() }
-            cell.backgroundColor = .blue
+            cell.configure(model: model)
             return cell
         }
     }
